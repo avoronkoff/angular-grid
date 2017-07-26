@@ -1,7 +1,16 @@
 <div class="container">
   <ul class="nav nav-pills pill-app">
     <li role="presentation"><button class="btn btn-primary">Home</button></li>
-    <li role="presentation" class="pull-right"><button class="btn btn-primary">Menu</button></li>
     <li role="presentation" class="pull-right"><button class="btn btn-primary">Back</button></li>
+    <div class="btn-group pull-right" dropdown>
+      <button dropdownToggle type="button" class="btn btn-primary dropdown-toggle">
+        Menu <span class="caret"></span>
+      </button>
+      <ul *dropdownMenu class="dropdown-menu" role="menu">
+        <li role="menuitem"><app-modal [item]="'first level'"></app-modal></li>
+        <li role="menuitem"><app-modal [item]="'second level'"></app-modal></li>
+        <li role="menuitem"><app-modal [item]="'third level'"></app-modal></li>
+      </ul>
+    </div>
   </ul>
 </div>

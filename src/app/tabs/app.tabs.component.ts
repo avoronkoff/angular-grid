@@ -9,18 +9,26 @@ import { AppGridService } from '../service/app.grid.service';
   styleUrls: ['./app.tabs.component.css']
 })
 
-export class AppTabsComponent implements OnInit{
-  grid_list: Grid[];
+export class AppTabsComponent implements OnInit {
+  grid_list_f: Grid[];
+  grid_list_s: Grid[];
 
   constructor(private appGridService: AppGridService) { }
 
-  getGrid(): void {
+  getGridF(): void {
     this.appGridService
-      .getGrid()
-      .then(heroes => this.grid_list = heroes);
+      .getGridF()
+      .then(list => this.grid_list_f = list);
+  }
+
+  getGridS(): void {
+    this.appGridService
+      .getGridS()
+      .then(list => this.grid_list_s = list);
   }
 
   ngOnInit(): void {
-    this.getGrid();
+    this.getGridF();
+    this.getGridS();
   }
 }

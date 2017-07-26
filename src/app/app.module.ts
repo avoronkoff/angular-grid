@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { TabsModule } from 'ngx-bootstrap';
+import { TabsModule, BsDropdownModule, ModalModule } from 'ngx-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
@@ -11,6 +11,9 @@ import { AppComponent } from './main/app.component';
 import { AppNavbarComponent } from './navbar/app.navbar.component';
 import { AppNavpillsComponent } from './navpills/app.navpills.component';
 import { AppTabsComponent } from './tabs/app.tabs.component';
+import { AppModalComponent } from './modals/modalDropdown/app.modal-dropdown.component';
+import { AppModalLogoutComponent } from './modals/modalLogout/app.modal-logout.component';
+import { AppTableRowPipe } from './pipes/app.table-row.pipe';
 
 import { AppGridService } from './service/app.grid.service';
 
@@ -19,14 +22,19 @@ import { AppGridService } from './service/app.grid.service';
     AppComponent,
     AppNavbarComponent,
     AppNavpillsComponent,
-    AppTabsComponent
+    AppTabsComponent,
+    AppModalComponent,
+    AppModalLogoutComponent,
+    AppTableRowPipe
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     InMemoryWebApiModule.forRoot(InMemoryDataService),
-    TabsModule.forRoot()
+    TabsModule.forRoot(),
+    BsDropdownModule.forRoot(),
+    ModalModule.forRoot()
   ],
   providers: [AppGridService],
   bootstrap: [AppComponent]

@@ -3,56 +3,38 @@
     <tab heading="grid first">
       <table class="table">
         <thead>
-        <tr>
-          <th>Firstname</th>
-          <th>Lastname</th>
-          <th>Email</th>
-        </tr>
+          <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Score</th>
+          </tr>
         </thead>
         <tbody>
-        <tr>
-          <td>John</td>
-          <td>Doe</td>
-          <td>john@example.com</td>
-        </tr>
-        <tr>
-          <td>Mary</td>
-          <td>Moe</td>
-          <td>mary@example.com</td>
-        </tr>
-        <tr>
-          <td>July</td>
-          <td>Dooley</td>
-          <td>july@example.com</td>
-        </tr>
+          <tr *ngFor="let list of grid_list_f"
+              [ngClass]="{'bg-danger': list.Score > 85, 'bg-success': list.Score > 70 && list.Score < 84}">
+            <td>{{list.Name}}</td>
+            <td>{{list.Surname}}</td>
+            <td>{{list.Score}}</td>
+          </tr>
         </tbody>
       </table>
     </tab>
     <tab heading="grid second">
       <table class="table">
         <thead>
-        <tr>
-          <th>Firstname</th>
-          <th>Lastname</th>
-          <th>Email</th>
-        </tr>
+          <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Score</th>
+          </tr>
         </thead>
         <tbody>
-        <tr>
-          <td>John</td>
-          <td>Doe</td>
-          <td>john@example.com</td>
-        </tr>
-        <tr>
-          <td>Mary</td>
-          <td>Moe</td>
-          <td>mary@example.com</td>
-        </tr>
-        <tr>
-          <td>July</td>
-          <td>Dooley</td>
-          <td>july@example.com</td>
-        </tr>
+          <tr *ngFor="let list of grid_list_s"
+              [ngClass]="{'bg-danger': list.Score > 85, 'bg-success': list.Score > 70 && list.Score < 84}">
+            <td>{{list.Name}}</td>
+            <td>{{list.Surname}}</td>
+            <td>{{list.Score}}</td>
+          </tr>
         </tbody>
       </table>
     </tab>

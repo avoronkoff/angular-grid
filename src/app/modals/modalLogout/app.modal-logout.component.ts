@@ -18,6 +18,5 @@ export class AppModalLogoutComponent {
   public closeTab(): void {
     this.modalRef.hide();
     this.modalRef = null;
-    window.close();
   }
 }

@@ -10,8 +10,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let list of grid_list_f"
-              [ngClass]="{'bg-danger': list.Score > 85, 'bg-success': list.Score > 70 && list.Score < 84}">
+          <tr *ngFor="let list of grid_list_f" [ngClass]="list.Score | tableRow">
             <td>{{list.Name}}</td>
             <td>{{list.Surname}}</td>
             <td>{{list.Score}}</td>
@@ -29,8 +28,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let list of grid_list_s"
-              [ngClass]="{'bg-danger': list.Score > 85, 'bg-success': list.Score > 70 && list.Score < 84}">
+          <tr *ngFor="let list of grid_list_s" [ngClass]="list.Score | tableRow">
             <td>{{list.Name}}</td>
             <td>{{list.Surname}}</td>
             <td>{{list.Score}}</td>

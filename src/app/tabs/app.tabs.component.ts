@@ -17,16 +17,13 @@ export class AppTabsComponent implements OnInit {
 
   constructor(private appGridService: AppGridService) { }
 
-  getGridF(): void {
+  getGrid(): void {
     this.appGridService
-      .getGridF()
-      .then(list => this.grid_list_f = list);
-  }
-
-  getGridS(): void {
-    this.appGridService
-      .getGridS()
-      .then(list => this.grid_list_s = list);
+      .getGrid()
+      .then(list => {
+        this.grid_list_f = list.items_f;
+        this.grid_list_s = list.items_s;
+      });
   }
 
   saveData(): void {
@@ -36,12 +33,11 @@ export class AppTabsComponent implements OnInit {
     FileSaver.saveAs(blob, 'exportData.xls');
   }
 
-  setIdTable(id): void {
-    this.exportId = id;
-  }
+  // setIdTable(id): void {
+  //   this.exportId = id;
+  // }
 
   ngOnInit(): void {
-    this.getGridF();
-    this.getGridS();
+    this.getGrid();
   }
 }
